@@ -59,4 +59,23 @@ public class StudentDAO {
             stmt.executeUpdate();
         }
     }
+public Student read(int id) throws SQLException {
+    String sql = "SELECT * FROM students WHERE id=?";
+    try (Connection conn = DatabaseConnection.getConnection();
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
+        stmt.setInt(1, id);
+        try (ResultSet rs = stmt.executeQuery()) {
+            if (rs.next()) {
+                Student student = new Student();
+                student.setId(rs.getInt("id"));
+                student.setFirstName(rs.getString("first_name"));
+                student.setLastName(rs.getString("last_name"));
+                student.setEmail(rs.getString("email"));
+                student.setDateOfBirth(rs.getDate("date_of_birth").toLocalDate());
+                return student;
+            }
+        }
+    }
+    return null;
+}
 }

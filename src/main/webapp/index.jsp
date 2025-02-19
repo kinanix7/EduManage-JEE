@@ -158,34 +158,37 @@
             </div>
         </div>
 
-        <!-- Card 3: List Students -->
-        <div class="col-md-4 col-sm-6">
-            <div class="card text-center shadow p-3 mb-5 bg-body rounded custom-card">
-                <div class="card-body">
-                    <i class="fa-solid fa-users fa-3x mb-3 icon-info"></i>
-                    <h5 class="card-title">Liste des Étudiants</h5>
-                    <p class="card-text">Cliquez ici pour voir la liste des étudiants.</p>
-                    <a href="${pageContext.request.contextPath}/students" class="btn btn-info custom-btn">
-                        <i class="fa-solid fa-list me-2"></i>Voir la Liste
-                    </a>
-                </div>
-            </div>
-        </div>
 
-        <!-- Card 4: List Courses -->
+
+
+
+        <!-- Card 5: Enroll Student in Courses -->
         <div class="col-md-4 col-sm-6">
             <div class="card text-center shadow p-3 mb-5 bg-body rounded custom-card">
                 <div class="card-body">
                     <i class="fa-solid fa-book fa-3x mb-3 icon-warning"></i>
-                    <h5 class="card-title">Liste des Cours</h5>
-                    <p class="card-text">Cliquez ici pour voir la liste des cours.</p>
-                    <a href="${pageContext.request.contextPath}/courses" class="btn btn-warning custom-btn">
-                        <i class="fa-solid fa-list me-2"></i>Voir la Liste
+                    <h5 class="card-title">Inscrire un Étudiant</h5>
+                    <p class="card-text">Cliquez ici pour inscrire un étudiant à un cours.</p>
+                    <a href="${pageContext.request.contextPath}/student-courses" class="btn btn-warning custom-btn">
+                        <i class="fa-solid fa-plus me-2"></i>Inscrire
                     </a>
                 </div>
             </div>
         </div>
+    <!-- Card 6: Enrolled Students -->
+    <div class="col-md-4 col-sm-6">
+        <div class="card text-center shadow p-3 mb-5 bg-body rounded custom-card">
+            <div class="card-body">
+                <i class="fa-solid fa-users fa-3x mb-3 icon-info"></i>
+                <h5 class="card-title">Enrolled Students</h5>
+                <p class="card-text">Cliquez ici pour voir la liste des étudiants inscrits.</p>
+                <a href="${pageContext.request.contextPath}/enrolled-students" class="btn btn-info custom-btn">
+                    <i class="fa-solid fa-list me-2"></i>Voir la Liste
+                </a>
+            </div>
+        </div>
     </div>
+</div>
 </div>
 
 <!-- Bootstrap JS and dependencies -->

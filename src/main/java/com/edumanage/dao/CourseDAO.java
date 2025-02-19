@@ -32,7 +32,7 @@ public class CourseDAO {
             }
         }
         return courses;
-    }
+    }   
 
     public void update(Course course) throws SQLException {
         String sql = "UPDATE courses SET name=?, description=? WHERE id=?";
