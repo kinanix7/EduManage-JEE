@@ -1,0 +1,39 @@
+20-Feb-2025 16:02:47.896 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom version serveur :              Apache Tomcat/10.1.19
+20-Feb-2025 16:02:47.907 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Serveur compilé :                  Feb 14 2024 19:36:50 UTC
+20-Feb-2025 16:02:47.908 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur :               10.1.19.0
+20-Feb-2025 16:02:47.908 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom de l'OS :                      Windows 11
+20-Feb-2025 16:02:47.910 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version OS :                       10.0
+20-Feb-2025 16:02:47.911 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture :                     amd64
+20-Feb-2025 16:02:47.911 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home :                        C:\Users\HP\.jdks\corretto-21.0.6
+20-Feb-2025 16:02:47.912 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version JVM :                      21.0.6+7-LTS
+20-Feb-2025 16:02:47.912 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Fournisseur de la JVM :            Amazon.com Inc.
+20-Feb-2025 16:02:47.913 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE :                    C:\Users\HP\Desktop\EducationManager
+20-Feb-2025 16:02:47.914 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME :                    C:\apache-tomcat-10.1.19
+20-Feb-2025 16:02:47.958 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.lang=ALL-UNNAMED
+20-Feb-2025 16:02:47.959 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.io=ALL-UNNAMED
+20-Feb-2025 16:02:47.959 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.util=ALL-UNNAMED
+20-Feb-2025 16:02:47.960 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+20-Feb-2025 16:02:47.960 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+20-Feb-2025 16:02:47.961 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dcatalina.home=C:\apache-tomcat-10.1.19
+20-Feb-2025 16:02:47.962 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dcatalina.base=C:\Users\HP\Desktop\EducationManager
+20-Feb-2025 16:02:47.963 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.io.tmpdir=C:\Users\HP\Desktop\EducationManager\temp
+20-Feb-2025 16:02:47.965 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.util.logging.config.file=C:\Users\HP\Desktop\EducationManager\conf\logging.properties
+20-Feb-2025 16:02:47.967 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+20-Feb-2025 16:02:47.967 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2024.3.2.2\lib\idea_rt.jar=56856:C:\Program Files\JetBrains\IntelliJ IDEA 2024.3.2.2\bin
+20-Feb-2025 16:02:47.968 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dfile.encoding=UTF-8
+20-Feb-2025 16:02:47.968 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dsun.stdout.encoding=UTF-8
+20-Feb-2025 16:02:47.970 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dsun.stderr.encoding=UTF-8
+20-Feb-2025 16:02:47.986 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Chargement de la librairie Apache Tomcat Native [2.0.7] en utilisant APR version [1.7.4]
+20-Feb-2025 16:02:48.034 INFOS [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL a été initialisé avec succès [OpenSSL 3.0.13 30 Jan 2024]
+20-Feb-2025 16:02:48.896 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["http-nio-8080"]
+20-Feb-2025 16:02:48.937 INFOS [main] org.apache.catalina.startup.Catalina.load L'initialisation du serveur a pris [1747] millisecondes
+20-Feb-2025 16:02:49.069 INFOS [main] org.apache.catalina.core.StandardService.startInternal Démarrage du service [Catalina]
+20-Feb-2025 16:02:49.070 INFOS [main] org.apache.catalina.core.StandardEngine.startInternal Démarrage du moteur de Servlets : [Apache Tomcat/10.1.19]
+20-Feb-2025 16:02:49.100 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [C:\Users\HP\Desktop\EducationManager\conf\Catalina\localhost\ROOT.xml]
+20-Feb-2025 16:02:50.012 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [C:\Users\HP\Desktop\EducationManager\conf\Catalina\localhost\ROOT.xml] a pris [904] ms
+20-Feb-2025 16:02:50.027 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["http-nio-8080"]
+20-Feb-2025 16:02:50.080 INFOS [main] org.apache.catalina.startup.Catalina.start Le démarrage du serveur a pris [1141] millisecondes
+20-Feb-2025 16:48:22.299 INFOS [Thread-1] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["http-nio-8080"] est mis en pause
+20-Feb-2025 16:48:22.451 INFOS [Thread-1] org.apache.catalina.core.StandardService.stopInternal Arrêt du service [Catalina]
+20-Feb-2025 16:48:23.061 INFOS [Thread-1] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["http-nio-8080"]
+20-Feb-2025 16:48:23.098 INFOS [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["http-nio-8080"]
