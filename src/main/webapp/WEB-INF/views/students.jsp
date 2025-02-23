@@ -10,108 +10,175 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #4a90e2;
-            --secondary-color: #f8f9fa;
-            --accent-color: #2c3e50;
+            --primary: #6366f1;
+            --secondary: #4f46e5;
+            --success: #22c55e;
+            --info: #3b82f6;
+            --warning: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
         }
 
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
+            background: linear-gradient(135deg, var(--light) 0%, #e2e8f0 100%);
             min-height: 100vh;
-        }
-
-        .table-container {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-            margin-top: 2rem;
+            font-family: system-ui, -apple-system, sans-serif;
         }
 
         .back-button {
             margin-bottom: 25px;
-            transition: transform 0.2s;
-            background-color: var(--accent-color);
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, var(--dark), #334155);
             border: none;
-            padding: 0.6rem 1.2rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 600;
         }
 
         .back-button:hover {
             transform: translateX(-5px);
-            background-color: #34495e;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .page-title {
-            color: var(--accent-color);
-            font-weight: 600;
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
             margin-bottom: 2rem;
-            position: relative;
-            padding-bottom: 1rem;
+            overflow: hidden;
         }
 
-        .page-title:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: var(--primary-color);
-            border-radius: 2px;
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-bottom: none;
+            padding: 1.5rem;
+        }
+
+        .card-header h5 {
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .form-floating .form-control {
+            border-radius: 12px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .form-floating .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         .table {
-            border-collapse: separate;
-            border-spacing: 0;
+            margin: 0;
         }
 
         .table th {
-            background-color: var(--secondary-color);
-            border-bottom: 2px solid var(--primary-color);
-            color: var(--accent-color);
-            font-weight: 600;
+            background-color: rgba(99, 102, 241, 0.1);
+            color: var(--dark);
+            font-weight: 700;
             text-transform: uppercase;
-            font-size: 0.9rem;
-            padding: 1rem;
+            font-size: 0.875rem;
+            letter-spacing: 0.5px;
+            padding: 1.25rem 1rem;
         }
 
         .table td {
             padding: 1rem;
             vertical-align: middle;
-            border-bottom: 1px solid #dee2e6;
+            color: #64748b;
         }
 
         .table tbody tr {
-            transition: all 0.2s;
+            transition: all 0.3s ease;
         }
 
         .table tbody tr:hover {
-            background-color: rgba(74, 144, 226, 0.05);
+            background-color: rgba(99, 102, 241, 0.05);
             transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
         }
 
-        .icon-gradient {
-            background: linear-gradient(45deg, var(--primary-color), #7cb9e8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-right: 10px;
+        .action-buttons .btn {
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-warning {
+            background: linear-gradient(135deg, var(--warning), #ea580c);
+            border: none;
+            color: white;
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            border: none;
+        }
+
+        .modal-content {
+            border-radius: 20px;
+            border: none;
+            overflow: hidden;
+        }
+
+        .modal-header {
+            padding: 1.5rem;
+            border: none;
+        }
+
+        .modal-header.bg-warning {
+            background: linear-gradient(135deg, var(--warning), #ea580c) !important;
+            color: white;
+        }
+
+        .modal-header.bg-danger {
+            background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+            color: white;
+        }
+
+        .alert {
+            border-radius: 12px;
+            border: none;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+
+        .alert-success {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.2));
+            color: var(--success);
+        }
+
+        .alert-danger {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(220, 38, 38, 0.2));
+            color: #dc2626;
         }
 
         @media (max-width: 768px) {
-            .table-container {
-                padding: 1.5rem;
-                margin-top: 1rem;
-            }
-
-            .table th, .table td {
-                padding: 0.75rem;
-            }
-
-            .page-title {
-                font-size: 1.5rem;
-            }
+            .container { padding: 1rem; }
+            .card-body { padding: 1.5rem; }
+            .table td, .table th { padding: 0.75rem; }
         }
     </style>
 </head>
@@ -215,7 +282,7 @@
                         <td><%= student.getDateOfBirth() %></td>
                         <td class="actions-column">
                             <div class="action-buttons">
-                                <button class="btn btn-warning btn-sm" onclick="editStudent(<%= student.getId() %>)">
+                                <button class="btn btn-warning btn-sm" onclick="editStudent('<%= student.getId() %>', '<%= student.getFirstName() %>', '<%= student.getLastName() %>', '<%= student.getEmail() %>', '<%= student.getDateOfBirth() %>')">
                                     <i class="fas fa-edit"></i>
                                     <span>Edit</span>
                                 </button>
@@ -332,11 +399,13 @@
     })()
 
     // Edit student function
-    function editStudent(id) {
+    function editStudent(id , firstName, lastName, email, dateOfBirth) {
         document.getElementById('editId').value = id;
-        // In a real application, you would fetch the student data from the server
-        const modal = new bootstrap.Modal(document.getElementById('editStudentModal'));
-        modal.show();
+        document.getElementById('editFirstName').value = firstName;
+        document.getElementById('editLastName').value = lastName;
+        document.getElementById('editEmail').value = email;
+        document.getElementById('editDateOfBirth').value = dateOfBirth;
+        new bootstrap.Modal(document.getElementById('editStudentModal')).show();
     }
 
     // Delete student function

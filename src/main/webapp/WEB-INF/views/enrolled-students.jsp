@@ -1,6 +1,5 @@
 <%@ page import="com.edumanage.model.StudentCourse" %>
 <%@ page import="java.util.List" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,41 +10,60 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         :root {
-            --primary-color: #4a90e2;
-            --secondary-color: #f8f9fa;
-            --accent-color: #2c3e50;
+            --primary: #6366f1;
+            --secondary: #4f46e5;
+            --success: #22c55e;
+            --info: #3b82f6;
+            --warning: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
         }
 
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
+            background: linear-gradient(135deg, var(--light) 0%, #e2e8f0 100%);
             min-height: 100vh;
-        }
-
-        .table-container {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-            margin-top: 2rem;
+            font-family: system-ui, -apple-system, sans-serif;
         }
 
         .back-button {
             margin-bottom: 25px;
-            transition: transform 0.2s;
-            background-color: var(--accent-color);
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, var(--dark), #334155);
             border: none;
-            padding: 0.6rem 1.2rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 600;
         }
 
         .back-button:hover {
             transform: translateX(-5px);
-            background-color: #34495e;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .table-container {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .table-container:hover {
+            transform: translateY(-5px);
         }
 
         .page-title {
-            color: var(--accent-color);
-            font-weight: 600;
+            color: var(--dark);
+            font-weight: 800;
+            font-size: 2rem;
             margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             position: relative;
             padding-bottom: 1rem;
         }
@@ -58,61 +76,64 @@
             transform: translateX(-50%);
             width: 100px;
             height: 3px;
-            background: var(--primary-color);
+            background: linear-gradient(to right, var(--primary), var(--secondary));
             border-radius: 2px;
         }
 
         .table {
             border-collapse: separate;
             border-spacing: 0;
+            margin: 0;
         }
 
         .table th {
-            background-color: var(--secondary-color);
-            border-bottom: 2px solid var(--primary-color);
-            color: var(--accent-color);
-            font-weight: 600;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(79, 70, 229, 0.1));
+            color: var(--dark);
+            font-weight: 700;
             text-transform: uppercase;
-            font-size: 0.9rem;
-            padding: 1rem;
+            font-size: 0.875rem;
+            letter-spacing: 0.5px;
+            padding: 1.25rem 1rem;
+            border-bottom: 2px solid rgba(99, 102, 241, 0.2);
         }
 
         .table td {
             padding: 1rem;
-            vertical-align: middle;
-            border-bottom: 1px solid #dee2e6;
+            color: var(--dark);
+            font-weight: 500;
+            border-bottom: 1px solid rgba(99, 102, 241, 0.1);
         }
 
         .table tbody tr {
-            transition: all 0.2s;
+            transition: all 0.3s ease;
         }
 
         .table tbody tr:hover {
-            background-color: rgba(74, 144, 226, 0.05);
+            background-color: rgba(99, 102, 241, 0.05);
             transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
         }
 
         .icon-gradient {
-            background: linear-gradient(45deg, var(--primary-color), #7cb9e8);
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-right: 10px;
         }
 
+        th i {
+            color: var(--primary);
+            margin-right: 0.5rem;
+        }
+
         @media (max-width: 768px) {
+            .container { padding: 1rem; }
             .table-container {
                 padding: 1.5rem;
                 margin-top: 1rem;
             }
-
-            .table th, .table td {
-                padding: 0.75rem;
-            }
-
-            .page-title {
-                font-size: 1.5rem;
-            }
+            .table th, .table td { padding: 0.75rem; }
+            .page-title { font-size: 1.5rem; }
         }
     </style>
 </head>
@@ -131,10 +152,10 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th><i class="fas fa-id-card me-2"></i>Student ID</th>
-                    <th><i class="fas fa-user me-2"></i>Student Name</th>
-                    <th><i class="fas fa-book me-2"></i>Course ID</th>
-                    <th><i class="fas fa-graduation-cap me-2"></i>Course Name</th>
+                    <th><i class="fas fa-id-card"></i>Student ID</th>
+                    <th><i class="fas fa-user"></i>Student Name</th>
+                    <th><i class="fas fa-book"></i>Course ID</th>
+                    <th><i class="fas fa-graduation-cap"></i>Course Name</th>
                 </tr>
                 </thead>
                 <tbody>
