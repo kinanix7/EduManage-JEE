@@ -1,12 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
+<%--
+  Created by IntelliJ IDEA.
+  User: youne
+  Date: 2/26/2025
+  Time: 4:44 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduManage - Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Title</title>
+
     <style>
         :root {
             --primary: #6366f1;
@@ -189,89 +192,41 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="${pageContext.request.contextPath}/dashboard">
+                        <i class="fa-solid fa-gauge-high me-1"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="${pageContext.request.contextPath}/students">
+                        <i class="fa-solid fa-user-graduate me-1"></i> Étudiants
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="${pageContext.request.contextPath}/courses">
+                        <i class="fa-solid fa-book me-1"></i> Cours
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="${pageContext.request.contextPath}/enrolled-students">
+                        <i class="fa-solid fa-clipboard-list me-1"></i> Inscriptions
+                    </a>
+                </li>
+            </ul>
             <div class="d-flex">
                 <span class="navbar-text me-3">
                     <i class="fa-solid fa-user-circle me-1"></i> ${sessionScope.username}
                 </span><form action="logout" method="post">
-                    <button type="submit" class="btn btn-logout">
-                        <i class="fa-solid fa-sign-out-alt me-1"></i> Déconnexion
-                    </button>
+                <button type="submit" class="btn btn-logout">
+                    <i class="fa-solid fa-sign-out-alt me-1"></i> Déconnexion
+                </button>
 
             </div>
         </div>
     </div>
 </nav>
 
-<div class="container py-5">
-    <h1 class="dashboard-title">EduManage Dashboard</h1>
-    <div class="row g-4">
-        <!-- Add Student Card -->
-        <div class="col-md-4 col-sm-6">
-            <div class="custom-card">
-                <div class="card-body">
-                    <div class="icon-wrapper icon-primary">
-                        <i class="fa-solid fa-user-plus"></i>
-                    </div>
-                    <h5 class="card-title">Ajouter un Étudiant</h5>
-                    <p class="card-text">Cliquez ici pour ajouter un nouvel étudiant au système.</p>
-                    <a href="${pageContext.request.contextPath}/students?action=add" class="btn custom-btn btn-primary">
-                        <i class="fa-solid fa-plus me-2"></i>Ajouter
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Add Course Card -->
-        <div class="col-md-4 col-sm-6">
-            <div class="custom-card">
-                <div class="card-body">
-                    <div class="icon-wrapper icon-success">
-                        <i class="fa-solid fa-book-open"></i>
-                    </div>
-                    <h5 class="card-title">Ajouter un Cours</h5>
-                    <p class="card-text">Cliquez ici pour ajouter un nouveau cours au catalogue.</p>
-                    <a href="${pageContext.request.contextPath}/courses?action=add" class="btn custom-btn btn-success">
-                        <i class="fa-solid fa-plus me-2"></i>Ajouter
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Enroll Student Card -->
-        <div class="col-md-4 col-sm-6">
-            <div class="custom-card">
-                <div class="card-body">
-                    <div class="icon-wrapper icon-warning">
-                        <i class="fa-solid fa-book"></i>
-                    </div>
-                    <h5 class="card-title">Inscrire un Étudiant</h5>
-                    <p class="card-text">Cliquez ici pour inscrire un étudiant à un cours disponible.</p>
-                    <a href="${pageContext.request.contextPath}/student-courses" class="btn custom-btn btn-warning">
-                        <i class="fa-solid fa-plus me-2"></i>Inscrire
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Enrolled Students Card -->
-        <div class="col-md-4 col-sm-6 ">
-            <div class="custom-card">
-                <div class="card-body">
-                    <div class="icon-wrapper icon-info">
-                        <i class="fa-solid fa-users"></i>
-                    </div>
-                    <h5 class="card-title">Étudiants Inscrits</h5>
-                    <p class="card-text">Cliquez ici pour voir la liste complète des étudiants inscrits.</p>
-                    <a href="${pageContext.request.contextPath}/enrolled-students" class="btn custom-btn btn-info">
-                        <i class="fa-solid fa-list me-2"></i>Voir la Liste
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
